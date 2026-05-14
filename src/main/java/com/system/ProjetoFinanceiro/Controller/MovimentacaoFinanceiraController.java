@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequestMapping("/movimentacaoFinanceira")
@@ -30,5 +29,23 @@ public class MovimentacaoFinanceiraController {
     @GetMapping("/{id}")
     public ResponseEntity<MovimentacaoFinanceiraDTO> buscarMovimentoPorId (@PathVariable Long id) {
         return service.buscarMovimentacaoPorId(id).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<String>  atualizarMovimentacao (@PathVariable Long id, @RequestBody MovimentacaoFinanceiraDTO dto) {
+        if(service.atualizarMovimentacao(id, dto)) {
+            return ResponseEntity.ok("Movimentacao atualizada");
+        }else  {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deletarMovimentacao (@PathVariable Long id) {
+        if (service.deletarMovimentacao(id)){
+            return ResponseEntity.ok("Movimentacao deletada");
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

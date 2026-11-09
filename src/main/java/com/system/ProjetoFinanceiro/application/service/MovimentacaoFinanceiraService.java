@@ -43,8 +43,8 @@ public class MovimentacaoFinanceiraService {
             movimentacaoFinanceira.setData(dto.data());
             movimentacaoFinanceira.setTipo(dto.tipo());
             movimentacaoFinanceira.setStatus(dto.status());
-            movimentacaoFinanceira.setCategoria(dto.categoria());
-            movimentacaoFinanceira.setUser(dto.user());
+            movimentacaoFinanceira.getCategoria().setId(dto.idCategoria());
+            movimentacaoFinanceira.getUser().setId(dto.idUser());
 
             repository.save(movimentacaoFinanceira);
             return true;

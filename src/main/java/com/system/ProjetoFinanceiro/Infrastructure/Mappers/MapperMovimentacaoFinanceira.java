@@ -15,8 +15,8 @@ public class MapperMovimentacaoFinanceira {
         movimentacaoFinanceira.setData(dto.data());
         movimentacaoFinanceira.setTipo(dto.tipo());
         movimentacaoFinanceira.setStatus(dto.status());
-        movimentacaoFinanceira.setCategoria(dto.categoria());
-        movimentacaoFinanceira.setUser(dto.user());
+        movimentacaoFinanceira.getCategoria().setId(dto.idCategoria());
+        movimentacaoFinanceira.getUser().setId(dto.idUser());
 
         return movimentacaoFinanceira;
     }
@@ -29,8 +29,8 @@ public class MapperMovimentacaoFinanceira {
                 movimentacaoFinanceira.getData(),
                 movimentacaoFinanceira.getTipo(),
                 movimentacaoFinanceira.getStatus(),
-                movimentacaoFinanceira.getCategoria(),
-                movimentacaoFinanceira.getUser()
+                movimentacaoFinanceira.getCategoria().getId(),
+                movimentacaoFinanceira.getUser().getId()
         );
     }
 }

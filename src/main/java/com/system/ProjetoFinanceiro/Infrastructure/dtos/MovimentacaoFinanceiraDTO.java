@@ -1,6 +1,5 @@
 package com.system.ProjetoFinanceiro.Infrastructure.dtos;
 
-import com.system.ProjetoFinanceiro.Domain.Entity.Categoria;
 import com.system.ProjetoFinanceiro.Domain.Entity.User;
 import com.system.ProjetoFinanceiro.Domain.Enum.TipoTransacao;
 
@@ -13,7 +12,7 @@ public record MovimentacaoFinanceiraDTO(
         LocalDate data,
         TipoTransacao tipo,
         Boolean status,
-        Categoria categoria,
-        User user
+        Long idCategoria,
+        Long idUser
 ) {
 }

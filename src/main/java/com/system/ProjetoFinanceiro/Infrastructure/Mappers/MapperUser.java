@@ -4,6 +4,8 @@ import com.system.ProjetoFinanceiro.Domain.Entity.User;
 import com.system.ProjetoFinanceiro.Infrastructure.dtos.UserDTO;
 import org.springframework.stereotype.Component;
 
+import java.util.stream.Collectors;
+
 @Component
 public class MapperUser {
 
@@ -24,7 +26,8 @@ public class MapperUser {
                 user.getNome(),
                 user.getEmail(),
                 user.getSenha(),
-                user.getDataNascimento()
+                user.getDataNascimento(),
+                user.getMovimentacaoFinanceira()
         );
     }
 }

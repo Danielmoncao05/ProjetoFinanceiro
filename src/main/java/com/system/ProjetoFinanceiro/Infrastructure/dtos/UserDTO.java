@@ -11,6 +11,8 @@ public record UserDTO(
         String email,
         String senha,
         LocalDate dataNascimento,
-        List<MovimentacaoFinanceira> movimentacoes
+      //  List<MovimentacaoFinanceira> movimentacoes
+        // listagem de movimentacoes com filtro de seu dto
+         List<MovimentacaoFinanceiraDTO> movimentacoes
 ) {
 }
